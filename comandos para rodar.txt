@@ -1,3 +1,8 @@
+gerar os .jar:
+	jar cfe dist/CofreDigital.jar App -C out .
+	jar cfe dist/LogView.jar LogViewApp -C out .
+	jar cfe dist/ResetDatabase.jar ResetDatabase -C out .
+
 rodar os .jar em dist:
 	java -cp "CofreDigital.jar;lib/*" App
 	java -cp "LogView.jar;lib/*" LogViewApp
@@ -26,3 +31,4 @@ palavras chaves:
 	admin
 	user01
 	user02
+
