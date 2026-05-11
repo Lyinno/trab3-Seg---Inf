@@ -1,0 +1,13 @@
+rodar os .jar em dist:
+	java -cp "CofreDigital.jar;lib/*" App
+	java -cp "LogView.jar;lib/*" LogViewApp
+	java -cp "ResetDatabase.jar;lib/*" ResetDatabase
+
+compilar tudo:
+	javac -cp ".;lib/*" -d out src/*.java src/db/*.java src/model/*.java src/crypto/*.java src/vault/*.java src/ui/*.java
+
+rodar .java:
+	java -cp ".;out;lib/*" App
+	java -cp ".;out;lib/*" LogViewApp
+	java -cp ".;out;lib/*" ResetDatabase
+	java -cp ".;out;lib/*" LogView test\Keys\admin-pkcs8-aes.key
