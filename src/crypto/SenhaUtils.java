@@ -10,11 +10,11 @@ public class SenhaUtils {
         if (senha == null) {
             return false;
         }
-
+    
         if (!senha.matches("[0-9]{8,10}")) {
             return false;
         }
-
+    
         boolean todosIguais = true;
         for (int i = 1; i < senha.length(); i++) {
             if (senha.charAt(i) != senha.charAt(0)) {
@@ -22,8 +22,29 @@ public class SenhaUtils {
                 break;
             }
         }
-
-        return !todosIguais;
+    
+        if (todosIguais) {
+            return false;
+        }
+    
+        for (int tamanho = 1; tamanho <= senha.length() / 2; tamanho++) {
+            if (senha.length() % tamanho != 0) {
+                continue;
+            }
+    
+            String bloco = senha.substring(0, tamanho);
+            StringBuilder repetida = new StringBuilder();
+    
+            while (repetida.length() < senha.length()) {
+                repetida.append(bloco);
+            }
+    
+            if (senha.equals(repetida.toString())) {
+                return false;
+            }
+        }
+    
+        return true;
     }
 
     public static String gerarHashBcrypt(String senha) {
