@@ -11,3 +11,18 @@ rodar .java:
 	java -cp ".;out;lib/*" LogViewApp
 	java -cp ".;out;lib/*" ResetDatabase
 	java -cp ".;out;lib/*" LogView test\Keys\admin-pkcs8-aes.key
+
+emails:
+	admin@inf1416.puc-rio.br
+	user01@inf1416.puc-rio.br
+	user02@inf1416.puc-rio.br
+
+senhas:
+	13572468
+	13572468
+	24681357
+
+palavras chaves:
+	admin
+	user01
+	user02
